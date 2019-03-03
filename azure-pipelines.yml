@@ -9,5 +9,7 @@ trigger:
 pool:
   vmImage: 'Ubuntu-16.04'
 
-    npm install
-  displayName: 'npm install'
+task: Npm@1
+  inputs:
+    command: npm start
+    publishEndpoint: 'npm start'
